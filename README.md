@@ -56,7 +56,7 @@ The Low-Rank Adaptation training was conducted using the [Google Colab training]
 Approximately 80 images of the chosen subject were used for the training, the parameters used can be found in this [video](https://youtu.be/HUPcr5njxkM?si=7dc1U9Na0rhPvnWw&t=183)
 After training the LoRA models using the Kohya Trainer, the resulting tensorflow files of the subject generated were directly integrated into the local installation of the Stable Diffusion Web UI in the _"stable-diffusion-webui/models/Lora"_ directory, enabling the usage of these custom-trained models in the SD WebUI.
 
-The Realistic Vision V5.1 model is specifically designed and optimized for generating high-resolution, photorealistic images. This model is a critical component in achieving high-quality images of the desired subject, and it functions within the stable diffusion framework, once downloaded, the model file needs to be placed in the _"models/Stable-diffusion"_ directory the local installation of the Stable Diffusion Web UI.
+The Realistic Vision V5.1 model is specifically designed and optimized for generating high-resolution, photorealistic images. This model is a critical component in achieving high-quality images of the desired subject, and it functions within the stable diffusion framework, once downloaded, the model file needs to be placed in the _"models/Stable-diffusion"_ directory.
 Once the Web UI recognizes the new model, you can select it from the Stable Diffusion checkpoint input field.
 
 ![Screen Shot](RVcheckpoint.png)
