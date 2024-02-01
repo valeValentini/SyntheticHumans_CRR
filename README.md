@@ -56,7 +56,7 @@ The Low-Rank Adaptation training was conducted using the [Google Colab training]
 Approximately 80 images of the chosen subject were used for the training, the parameters used can be found in this [video](https://youtu.be/HUPcr5njxkM?si=7dc1U9Na0rhPvnWw&t=183)
 After training the LoRA models using the Kohya Trainer, the resulting tensorflow files of the subject generated were directly integrated into the local installation of the Stable Diffusion Web UI in the _"stable-diffusion-webui/models/Lora"_ directory, enabling the usage of these custom-trained models in the SD WebUI.
 
-The Realistic Vision V5.1 model is specifically designed and optimized for generating high-resolution, photorealistic images. This model is a critical component in achieving high-quality images of the desired subject, and it functions within the stable diffusion framework, once downloaded, the model file needs to be placed in the _"models/Stable-diffusion"_ directory.
+The Realistic Vision V5.1 model is specifically designed and optimized for generating high-resolution, photorealistic images. This model is a critical component in achieving high-quality images of the desired subject, and it functions within the stable diffusion framework, once downloaded, the model file needs to be placed in the _"stable-diffusion-webui/models/Stable-diffusion"_ directory.
 Once the Web UI recognizes the new model, you can select it from the Stable Diffusion checkpoint input field.
 
 ![Screen Shot](RVcheckpoint.png)
@@ -64,7 +64,7 @@ Once the Web UI recognizes the new model, you can select it from the Stable Diff
 ControlNet is a neural network structure that significantly enhances the capabilities of large, pretrained text-to-image diffusion models like Stable Diffusion.
 By adding spatial conditioning controls, it allows for more specific and controlled image generation.
 In combination with OpenPose, is it possible to have specific pose estimation in the output images. OpenPose detects human keypoints from the driving images, providing an extra external condition for the SD model alongside the text prompt.
-To install ControlNet's extension on the Stable diffusion WEB UI and the OpenPose Model File follow this installation [guide](https://stable-diffusion-art.com/controlnet/)
+To install ControlNet's extension on the Stable diffusion WEB UI and the OpenPose Model File follow this installation [guide](https://stable-diffusion-art.com/controlnet/). 
 
 
 ### Prerequisites
@@ -103,7 +103,38 @@ npm install
 const API_KEY = 'ENTER YOUR API';
 ```
 
-## Usage
+## Stable Diffusion Usage Instructions
+After fine-tuning a model on your specific subject using the Lora technique and placing it in the designated folder, follow these steps to generate high-quality images of the _subject_
+
+1. Configure "Realistic Vision" as your Stable Diffusion Checkpoint
+2. Choose the subject file from the Lora tab
+3. Paste the input Prompts:
+* Prompt 
+```sh
+<lora:subject:1>, RAW photo, flat lighting, 8k uhd, dslr, high quality, white background, white t-shirt, neutral expression
+```
+* Negative Prompt 
+```sh
+(deformed iris, deformed pupils, semi-realistic, cgi, 3d, render, sketch, cartoon, drawing, anime, mutated hands and fingers:1.4), (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, disconnected limbs, mutation, mutated, ugly, disgusting, amputation
+```
+3. Adjust these parameters based on your specific needs:
+* Sampling method: Euler A or DPM++ SDE Karras
+* Sampling steps: 20 - 30
+* CFG Scale: 3,5 - 7
+* Hires. fix: Lanczos
+* Upscale: 1.1
+* Denoising strength: 0.25-0.45
+
+4. In the ControlNet section upload a driving image of the pose you want your subject to assume. [guide](https://learn.thinkdiffusion.com/controlnet-openpose/)
+ * Check Pixel Perfect Box
+ * Control Type: OpenPose
+ * Preprocessor: openpose_face
+ * Model: control_v11p_sd15_openpose
+   
+5.Generate!
+
+![Screen Shot](prompt.png)
+![Screen Shot](facemapping.png)
 
 
 ## License
