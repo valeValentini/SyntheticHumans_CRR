@@ -33,7 +33,7 @@ This project aimed to transform RAI’s vast archive of images and videos resour
 This was achieved through the Orchestrator, developed in partnership with PluxBox for the IBC2023 Accelerator Project. The Orchestrator is a sophisticated technological tool that integrates various stages - from image selection to super-resolution, culminating in three-dimensional face reconstruction. Automation in Face Reconstruction was facilitated by a script provided to the Orchestrator via Rest APIs, employing Blender FaceBuilder plugin's functionalities to create 3D face meshes from 2D images.
 
 <p align="center">
-  <h3>Face Texture Reconstruction
+  <h3>Facial Texture Reconstruction
 </h3>
 </p>
 The project also explores improving textures using Generative AI to produce images of the reference subject. AI-generated images were found to be more suitable for texture production than traditional methods. This phase benefited from the refinement of LoRA training models, enabling the creation of realistic, detailed images crucial for generating uniform textures in Synthetic Human creation.
@@ -48,7 +48,7 @@ Major Frameworks Utilized in the Project:
 * [Realistic Vision V5.1 Checkpoint](https://civitai.com/models/4201/realistic-vision-v51)
 * [ControlNet openpose](https://huggingface.co/lllyasviel/sd-controlnet-openpose)
 
-## Getting Started
+## Getting Started for Facial Texture Reconstruction
 
 Through the [Stable Diffusion Web UI](https://github.com/AUTOMATIC1111/stable-diffusion-webui) provided by Automatic1111 it is possible to [download](https://stable-diffusion-art.com/install-windows/) and run Stable Diffusion locally.
 
@@ -76,35 +76,7 @@ The minimum Stable Diffusion system requirements before you begin:
 - 8GB Memory (RAM)
 --------------------------------------
 
-* npm
-
-```sh
-npm install npm@latest -g
-```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-
-2. Clone the repo
-
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
-
-3. Install NPM packages
-
-```sh
-npm install
-```
-
-4. Enter your API in `config.js`
-
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
-
-## Stable Diffusion Usage Instructions
+## Facial Texture Reconstruction Usage Instructions
 After fine-tuning a model on your specific subject using the LoRA technique and placing it in the designated folder, follow these steps to generate high-quality images of the _subject_
 
 1. Configure "Realistic Vision" as your Stable Diffusion Checkpoint
@@ -137,11 +109,6 @@ After fine-tuning a model on your specific subject using the LoRA technique and 
 ![Screen Shot](prompt.png)
 ![Screen Shot](facemapping.png)
 
-
-## License
-
-Distributed under the MIT License. See [LICENSE](https://github.com/valeValentini/SyntheticHumans_CRR/blob/main/LICENSE.md) for more information.
-
 ## Authors
 
 * **Valeria Valentini** 
@@ -149,6 +116,3 @@ Distributed under the MIT License. See [LICENSE](https://github.com/valeValentin
 
 ## Acknowledgements
 
-* [ShaanCoding](https://github.com/ShaanCoding/)
-* [Othneil Drew](https://github.com/othneildrew/Best-README-Template)
-* [ImgShields](https://shields.io/)
