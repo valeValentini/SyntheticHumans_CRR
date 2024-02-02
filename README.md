@@ -137,6 +137,3 @@ After fine-tuning a model on your specific subject using the LoRA technique and 
 
 * **Valeria Valentini** 
 * **Miriana Martini** 
-
-## Acknowledgements
-
