@@ -31,9 +31,32 @@ This project aimed to transform RAI’s vast archive of images and videos resour
 </h3>
 </p>
 
-This was achieved through the Orchestrator, developed in partnership with PluxBox for the IBC2023 Accelerator Project. The Orchestrator is a sophisticated technological tool that integrates various stages - from image selection to super-resolution, culminating in three-dimensional face reconstruction. For a visual demonstration of this cutting-edge process, you can explore this [demo](https://www.youtube.com/watch?v=HkRWnIfsjuE).
+This achievement is attributed to the Orchestrator, a cutting-edge technological tool developed in collaboration with PluxBox for the IBC2023 Accelerator Project. The Orchestrator seamlessly integrates multiple stages, ranging from image selection to super-resolution, ultimately leading to the reconstruction of a three-dimensional face. If you're curious to witness this innovative process in action, check out our [demo](https://www.youtube.com/watch?v=HkRWnIfsjuE).
 
-Automation in Face Reconstruction was made possible by a Python script named ["FB_Head_Reconstruction_Automatized.py"](./FB_Head_Reconstruction_Automatized.py). This script takes advantage of the functionality of Blender's [FaceBuilder plugin](https://keentools.io/products/facebuilder-for-blender), allowing the generation of a 3D model of the face from 2D images as output. To integrate this script into the Orchestrator, a REST API service called FaceG3n was developed and deployed on a Linux-based Rai server.
+## Automation through FaceBuilder and Python Script
+
+The automation in face reconstruction is made possible by a Python script named ["FB_Head_Reconstruction_Automatized.py"](./FB_Head_Reconstruction_Automatized.py). Leveraging the powerful features of Blender's FaceBuilder plugin, this script allows to generate a 3D model of the face from 2D images.
+
+### Prerequisites for Script Execution
+
+Before executing the script, ensure you have the following prerequisites:
+* [Blender](https://www.blender.org/download/) installed
+* A valid license for the [FaceBuilder plugin](https://keentools.io/products/facebuilder-for-blender)
+
+### Running the Script
+
+Once you have Blender and FaceBuilder installed, it's possible execute the script from the command line using the following command:
+
+```bash
+blender -b -P "path\FB_Head_Reconstruction_Automatized.py" -- "path\imgs"
+```
+Replace "path\FB_Head_Reconstruction_Automatized.py" with the actual path of the script and "path\imgs" with the directory containing the 2D images needed for the script.
+
+## Integration with Orchestrator using FaceG3n
+To integrate the script into the Orchestrator, a REST API service named FaceG3n was developed and deployed on a Linux-based Rai server, ensuring efficient communication and coordination between the Orchestrator and the 3D head creation script.
+![Screenshot](./RESTAPI_scheme.png)
+
+
 
 <p align="center">
   <h3>Facial Texture Reconstruction
