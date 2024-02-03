@@ -49,7 +49,7 @@ Once you have Blender and FaceBuilder installed, it's possible execute the scrip
 ```bash
 blender -b -P "path\FB_Head_Reconstruction_Automatized.py" -- "path\imgs"
 ```
-Replace "path\FB_Head_Reconstruction_Automatized.py" with the actual path of the script and "path\imgs" with the directory containing the 2D images needed for the script.
+Replace "path\FB_Head_Reconstruction_Automatized.py" with the path of the script and "path\imgs" with the directory containing the 2D images needed for the script.
 
 ### Integration with Orchestrator using FaceG3n
 To integrate the script into the Orchestrator, a REST API service named FaceG3n was developed and deployed on a Linux-based Rai server, ensuring efficient communication and coordination between the Orchestrator and the 3D head creation script.
